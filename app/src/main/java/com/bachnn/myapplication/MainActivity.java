@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         mToolbar= findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
     }
+
+    
     private void setAnimation() {
         for (int i=0;i<listImage.length;i++){
             ImageView imageView= new ImageView(this);
