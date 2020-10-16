@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/custom_toolbar"
+    android:layout_height="48dp"
+    app:layout_scrollFlags="scroll|enterAlways"
+    android:elevation="8dp"
+    app:layout_collapseMode="pin"
+    >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/icon_toolbar"
+            android:src="@drawable/ic_baseline_search_24"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"/>
+        <EditText
+            android:id="@+id/edt_toolbar"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Tìm kiếm săn phẩm"
+            android:layout_marginEnd="5dp"
+            />
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>
