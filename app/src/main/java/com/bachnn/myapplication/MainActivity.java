@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
     }
 
-    
+
     private void setAnimation() {
         for (int i=0;i<listImage.length;i++){
             ImageView imageView= new ImageView(this);
