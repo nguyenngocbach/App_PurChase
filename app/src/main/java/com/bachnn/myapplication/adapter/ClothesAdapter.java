@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bachnn.myapplication.R;
 import com.bachnn.myapplication.listener.ItemListener;
 import com.bachnn.myapplication.model.Item;
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -51,6 +52,10 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ClothesV
     @Override
     public void onBindViewHolder(@NonNull ClothesAdapter.ClothesViewHolder holder, int position) {
         holder.onBind(mItems.get(position));
+        Glide.with(mContext)
+                .load(mItems.get(position).getmImage())
+                .placeholder(R.drawable.yeu_em)
+                .into(holder.imgItem);
     }
 
     @Override
@@ -79,10 +84,6 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ClothesV
         }
 
         public void onBind(Item item) {
-            Picasso.with(mContext)
-                    .load(item.getmImage())
-                    .placeholder(R.drawable.yeu_em)
-                    .into(imgItem);
             nameItem.setText(item.getmName());
             if (item.ismIsSale()){
                 isSaleItem.setVisibility(View.VISIBLE);

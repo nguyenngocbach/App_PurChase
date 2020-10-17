@@ -1,136 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/custom_background">
-                    <androidx.appcompat.widget.Toolbar
-                        android:id="@+id/toolbar"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:background="#ED2A2A"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_collapseMode="pin"
-                        app:layout_scrollFlags="scroll|enterAlways"
-                        android:elevation="8dp"
-                        >
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/txt_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Mua Hàng"
-                        android:textColor="#F1F1F1"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_scrollFlags="scroll|enterAlways" />
-
-                    <ImageView
-                        android:id="@+id/icon_purchase"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_marginEnd="10dp"
-                        android:padding="6dp"
-                        android:src="@drawable/ic_baseline_add_shopping_cart_24"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_scrollFlags="scroll|enterAlways"
-                        />
-
-                    <ImageView
-                        android:id="@+id/icon_message"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_marginEnd="6dp"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_baseline_keyboard_voice_24"
-                        app:layout_constraintEnd_toStartOf="@id/icon_purchase"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_scrollFlags="scroll|enterAlways" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.appcompat.widget.Toolbar>
-
-                    <LinearLayout
-                        android:id="@+id/search_icon"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:background="@drawable/custom_toolbar"
-                        android:layout_height="48dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginStart="10dp"
-                        app:layout_constraintTop_toBottomOf="@id/toolbar"
-                        >
-                        <ImageView
-                            android:id="@+id/icon_toolbar"
-                            android:src="@drawable/ic_baseline_search_24"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
-                            android:padding="10dp"
-                            android:layout_marginStart="10dp"/>
-                        <EditText
-                            android:id="@+id/edt_toolbar"
-                            android:layout_marginStart="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:hint="Tìm kiếm săn phẩm"
-                            android:layout_marginEnd="5dp"
-                            />
-                    </LinearLayout>
-                    <ViewAnimator
-                        android:id="@+id/icon_lable"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_margin="5dp"
-                        android:padding="5dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/custom_toolbar"
-                        app:layout_constraintDimensionRatio="16:8"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/search_icon" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-        </com.google.android.material.appbar.AppBarLayout>
-        <androidx.core.widget.NestedScrollView
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/id_view_pager_abc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            >
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                android:orientation="horizontal"
-                app:spanCount="3"
-                android:layout_height="wrap_content"/>
-        </androidx.core.widget.NestedScrollView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:layout_weight="1"
+            />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/id_tablayout"
+            android:layout_width="match_parent"
+            android:background="@color/ogin"
+            android:layout_height="56dp"
+            />
+    </LinearLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/id_navigation"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/a_head"
+            />
+
+</androidx.drawerlayout.widget.DrawerLayout>

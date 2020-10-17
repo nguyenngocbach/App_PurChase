@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="120dp"
-    android:layout_height="140dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="100dp"
+    android:layout_height="120dp"
+    android:padding="3dp"
     android:id="@+id/fram">
     <ImageView
         android:id="@+id/image_item"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/yeu_em"
+        android:scaleType="centerCrop"
         />
     <TextView
         android:id="@+id/is_sale"
