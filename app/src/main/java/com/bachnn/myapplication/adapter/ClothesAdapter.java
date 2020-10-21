@@ -37,6 +37,10 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ClothesV
         return mItems.get(position).ismIsSale() ? mChooseItem : mNormal;
     }
 
+
+    // áhdjasjdahsdhjasdas
+    //hdahdghas
+
     @NonNull
     @Override
     public ClothesAdapter.ClothesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
