@@ -38,9 +38,6 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ClothesV
     }
 
 
-    // áhdjasjdahsdhjasdas
-    //hdahdghas
-
     @NonNull
     @Override
     public ClothesAdapter.ClothesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -19,14 +19,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bachnn.myapplication.MainActivity;
 import com.bachnn.myapplication.R;
+import com.bachnn.myapplication.adapter.AllAdapter;
 import com.bachnn.myapplication.adapter.ClothesAdapter;
+import com.bachnn.myapplication.listener.IAllItemListener;
 import com.bachnn.myapplication.listener.ItemListener;
+import com.bachnn.myapplication.model.AllItem;
 import com.bachnn.myapplication.model.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainFragment extends Fragment implements ItemListener {
+public class MainFragment extends Fragment implements ItemListener, IAllItemListener {
     private Toolbar mToolbar;
     private ViewAnimator animator;
     private int[] listImage= {R.drawable.ngoc_em,R.drawable.ngoctrinh1,
@@ -35,6 +38,10 @@ public class MainFragment extends Fragment implements ItemListener {
     private int index =0;
     private ImageView view;
     private MainActivity mainActivity;
+
+    private RecyclerView recyclerViewAllItem;
+    private AllAdapter mAllAdapter;
+    private List<AllItem> mAllItems;
 
     private RecyclerView mRecyclerView;
     private ClothesAdapter mClothAdapter;
@@ -66,7 +73,32 @@ public class MainFragment extends Fragment implements ItemListener {
         initData();
         mClothAdapter= new ClothesAdapter(getContext(),mItems,this);
         mRecyclerView.setAdapter(mClothAdapter);
+
+        //All Item
+        recyclerViewAllItem= view.findViewById(R.id.recyc_view_2);
+        mAllItems= new ArrayList<>();
+        mAllAdapter= new AllAdapter(getContext(),mAllItems,this);
+        recyclerViewAllItem.setAdapter(mAllAdapter);
+        initDataAllItem();
         return view;
+    }
+
+    private void initDataAllItem() {
+        mAllItems.add(new AllItem("Người Yêu Hải ->","http://iv1.lisimg.com/image/3773431/600full-ngoc-trinh.jpg",
+                "https://www.walikali.com/wp-content/uploads/2019/06/Ngoc-Trinh-4.jpg",
+                "http://crazum.com/wp-content/uploads/2019/07/fdd38a4374029d5cc413.jpg",
+                "http://crazum.com/wp-content/uploads/2019/07/Ngoc-Trinh-2.jpg",
+                "https://ilarge.lisimg.com/image/9708032/740full-ngoc-trinh.jpg"));
+        mAllItems.add(new AllItem("Người Yêu Đức ->","http://3.bp.blogspot.com/-rQH7Tw02njc/UTQHnapEUYI/AAAAAAAAHtA/vuOf0RvBQBw/w1200-h630-p-k-no-nu/Ngoc+Trinh2-1.jpg",
+                "https://tse1.mm.bing.net/th?id=OIP.jEMCBvHqi65QHSRqH5dXLQHaEK&pid=Api&P=0&w=287&h=162",
+                "http://1.bp.blogspot.com/-nbvDgKd3i1E/UTQHp6cOeuI/AAAAAAAAHtI/4YNgV9OHuv0/s1600/Ngoc+Trinh2-2.jpg",
+                "https://tieusunguoinoitieng.com/wp-content/uploads/2017/09/tieu-su-ngoc-trinh-2.jpg",
+                "https://ilarge.lisimg.com/image/9708033/740full-ngoc-trinh.jpg"));
+        mAllItems.add(new AllItem("Người Yêu Hiệp ->","http://4.bp.blogspot.com/-JwX6NxIASDg/UbftW0EEHhI/AAAAAAAAKmI/ikGzATzNLQw/s1600/Ngoc+Trinh1-7.jpg",
+                "https://ilarge.lisimg.com/image/11600386/740full-ngoc-trinh.jpg",
+                "https://1.bp.blogspot.com/-qP1iggxLPuc/UTQHEk9qozI/AAAAAAAAHsw/pL1_TJ9xKks/s1600/Ngoc+Trinh1-4.jpg",
+                "https://1.bp.blogspot.com/-QX-Eq5MZ5qs/UTQOIFRl_GI/AAAAAAAAHxI/748pLf5Fcqs/s1600/Ngoc+Trinh4-9.jpg",
+                "http://iv1.lisimg.com/image/3773431/600full-ngoc-trinh.jpg"));
     }
 
     private void initData() {
@@ -100,9 +132,6 @@ public class MainFragment extends Fragment implements ItemListener {
                 "http://4.bp.blogspot.com/-_FwF_YFT8AM/Ubfo8bMKrSI/AAAAAAAAKjo/mp4GzlolBvk/s1600/Ngoc+Trinh1-8.jpg","100000","20%",false,"1"));
         mItems.add(new Item("136","Áo Đông","Quần áo ok",
                 "http://iv1.lisimg.com/image/6656173/500full-ngoc-trinh.jpg","100000","20%",false,"1"));
-        mItems.add(new Item("137","Áo Đông","Quần áo ok",
-                "https://ilarge.lisimg.com/image/11600386/740full-ngoc-trinh.jpg","100000","20%",false,"1"));
-
     }
 
     @Override
