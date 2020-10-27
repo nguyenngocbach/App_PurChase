@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    android:background="@drawable/custom_all_item"
+    android:layout_margin="3dp"
+    android:padding="5dp">
+    <ImageView
+        android:id="@+id/img_sale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ok_em_9"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="50dp"
+        />
+    <TextView
+        android:id="@+id/name_item"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="bottom"
+        android:text="Gia Xinh"
+        android:textColor="@color/color_while"
+        android:gravity="center"
+        android:background="@drawable/custom_name_item"
+        android:layout_marginBottom="25dp"
+        />
+    <TextView
+        android:id="@+id/item_price"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:textColor="@color/color_while"
+        android:background="@drawable/custom_price"
+        android:layout_gravity="bottom"
+        android:layout_margin="2dp"
+        android:text="100.000"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+    <TextView
+        android:id="@+id/item_sale"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:background="@drawable/custom_sale_v"
+        android:text="30%"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@color/color_while"
+        />
+</FrameLayout>

@@ -21,6 +21,7 @@ import com.bachnn.myapplication.MainActivity;
 import com.bachnn.myapplication.R;
 import com.bachnn.myapplication.adapter.AllAdapter;
 import com.bachnn.myapplication.adapter.ClothesAdapter;
+import com.bachnn.myapplication.adapter.FinalAdapter;
 import com.bachnn.myapplication.listener.IAllItemListener;
 import com.bachnn.myapplication.listener.ItemListener;
 import com.bachnn.myapplication.model.AllItem;
@@ -46,6 +47,9 @@ public class MainFragment extends Fragment implements ItemListener, IAllItemList
     private RecyclerView mRecyclerView;
     private ClothesAdapter mClothAdapter;
     List<Item> mItems;
+
+    private RecyclerView mRecyclerFinal;
+    private FinalAdapter mFinalAdapter;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -80,6 +84,10 @@ public class MainFragment extends Fragment implements ItemListener, IAllItemList
         mAllAdapter= new AllAdapter(getContext(),mAllItems,this);
         recyclerViewAllItem.setAdapter(mAllAdapter);
         initDataAllItem();
+
+        mRecyclerFinal= view.findViewById(R.id.recycler_view_final);
+        mFinalAdapter= new FinalAdapter(getContext(),mItems,this);
+        mRecyclerFinal.setAdapter(mFinalAdapter);
         return view;
     }
 

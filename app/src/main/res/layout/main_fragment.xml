@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,20 +21,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_background">
+
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:background="#ED2A2A"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_collapseMode="pin"
-                        app:layout_scrollFlags="scroll|enterAlways"
+                        android:background="#ED2A2A"
                         android:elevation="8dp"
-                        >
+                        app:layout_collapseMode="pin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_scrollFlags="scroll|enterAlways">
+
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
                                 android:id="@+id/txt_title"
                                 android:layout_width="match_parent"
@@ -58,8 +61,7 @@
                                 android:src="@drawable/ic_baseline_add_shopping_cart_24"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:layout_scrollFlags="scroll|enterAlways"
-                                />
+                                app:layout_scrollFlags="scroll|enterAlways" />
 
                             <ImageView
                                 android:id="@+id/icon_message"
@@ -76,31 +78,32 @@
 
                     <LinearLayout
                         android:id="@+id/search_icon"
-                        android:orientation="horizontal"
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:background="@drawable/custom_toolbar"
                         android:layout_height="48dp"
-                        android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
-                        app:layout_constraintTop_toBottomOf="@id/toolbar"
-                        >
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/custom_toolbar"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
                         <ImageView
                             android:id="@+id/icon_toolbar"
-                            android:src="@drawable/ic_baseline_search_24"
                             android:layout_width="45dp"
                             android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
                             android:padding="10dp"
-                            android:layout_marginStart="10dp"/>
+                            android:src="@drawable/ic_baseline_search_24" />
+
                         <EditText
                             android:id="@+id/edt_toolbar"
-                            android:layout_marginStart="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
-                            android:hint="Tìm kiếm săn phẩm"
+                            android:layout_marginStart="10dp"
                             android:layout_marginEnd="5dp"
-                            />
+                            android:hint="Tìm kiếm săn phẩm" />
                     </LinearLayout>
+
                     <ViewAnimator
                         android:id="@+id/icon_lable"
                         android:layout_width="match_parent"
@@ -116,43 +119,82 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#80D8D8D4"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            >
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/txt_title_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Gái Xinh ->"
-                    android:paddingStart="15dp"
-                    android:textSize="16dp"
                     android:padding="3dp"
-                    android:textStyle="bold"
+                    android:paddingStart="15dp"
+                    android:text="Gái Xinh ->"
                     android:textColor="@color/color_red"
-                    />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/id_recycler_view"
-                android:layout_width="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                android:orientation="horizontal"
-                app:spanCount="2"
-                android:layout_height="wrap_content"/>
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/id_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyc_view_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    />
-        </LinearLayout>
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                <TextView
+                    android:id="@+id/txt_title_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:paddingStart="15dp"
+                    android:text="Gái Xinh ->"
+                    android:textColor="@color/color_red"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_final"
+                    android:layout_width="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    android:foregroundGravity="center"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:textColor="#151508"
+                    android:autoLink="web"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/link_facebook"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#151508"
+                    android:gravity="center"
+                    android:text="Số Điện Thoại : 0123456789"/>
+                <TextView
+                    android:text="Nguyễn Minh Đức"
+                    android:padding="5dp"
+                    android:textColor="#151508"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
