@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="200dp"
+    android:layout_margin="1dp"
+    android:padding="3dp"
+    android:background="@drawable/custom_all_item"
+    >
+    <ImageView
+        android:id="@+id/image_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ok_em_9"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="25dp"
+        />
+    <TextView
+        android:id="@+id/name_item"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="bottom"
+        android:text="Gia Xinh"
+        android:textColor="@color/color_while"
+        android:gravity="center"
+        android:background="@drawable/custom_name_item"
+        />
+    <TextView
+        android:id="@+id/item_sale"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="30%"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:textColor="@color/color_while"
+        android:background="@drawable/circle_red"
+        />
+</FrameLayout>

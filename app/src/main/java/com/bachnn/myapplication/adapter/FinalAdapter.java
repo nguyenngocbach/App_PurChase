@@ -28,16 +28,33 @@ public class FinalAdapter extends RecyclerView.Adapter<FinalAdapter.ViewHolderFi
         this.listener = listener;
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return mItems.get(position).getmType();
+    }
+
     @NonNull
     @Override
     public FinalAdapter.ViewHolderFinal onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(mContext).inflate(R.layout.layout_view_sale,parent,false);
+        View view;
+        if (viewType==0) {
+            view = LayoutInflater.from(mContext).inflate(R.layout.layout_view_sale, parent, false);
+        }
+        else {
+            view = LayoutInflater.from(mContext).inflate(R.layout.layout_view_unsale,parent,false);
+        }
         return new ViewHolderFinal(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FinalAdapter.ViewHolderFinal holder, int position) {
+    public void onBindViewHolder(@NonNull final FinalAdapter.ViewHolderFinal holder, final int position) {
         holder.onBind(mItems.get(position));
+        holder.imgItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.setOnClickItemAll(mItems.get(position),holder);
+            }
+        });
     }
 
     @Override
@@ -46,26 +63,29 @@ public class FinalAdapter extends RecyclerView.Adapter<FinalAdapter.ViewHolderFi
     }
 
     public class ViewHolderFinal extends RecyclerView.ViewHolder {
-        ImageView imgFinal;
-        TextView txtName;
-        TextView txtPrice;
-        TextView txtSale;
-        public ViewHolderFinal(@NonNull View itemView) {
+        public ImageView imgItem;
+        public TextView nameItem;
+        public TextView txtPrice;
+        public TextView txtSale;
+        public ViewHolderFinal(@NonNull final View itemView) {
             super(itemView);
-            imgFinal= itemView.findViewById(R.id.img_sale);
-            txtName= itemView.findViewById(R.id.name_item);
+            imgItem = itemView.findViewById(R.id.img_sale);
+            nameItem = itemView.findViewById(R.id.name_item);
             txtPrice= itemView.findViewById(R.id.item_price);
             txtSale= itemView.findViewById(R.id.item_sale);
+
         }
 
         public void onBind(Item item) {
             Glide.with(mContext)
                     .load(item.getmImage())
                     .placeholder(R.drawable.yeu_em)
-                    .into(imgFinal);
-            txtName.setText(item.getmName());
+                    .into(imgItem);
+            nameItem.setText(item.getmName());
             txtPrice.setText(item.getmPrice());
-            txtName.setText(item.getmSale());
+            if (getItemViewType()!=0){
+                txtSale.setVisibility(View.GONE);
+            }else nameItem.setText(item.getmSale());
         }
     }
 }

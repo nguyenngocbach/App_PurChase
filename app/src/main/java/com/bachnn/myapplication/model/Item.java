@@ -1,6 +1,8 @@
 package com.bachnn.myapplication.model;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
     private String mID;
     private String mName;
     private String mDescription;
@@ -8,9 +10,9 @@ public class Item {
     private String mPrice;
     private String mSale;
     private boolean mIsSale;
-    private String mType;
+    private int mType;
 
-    public Item(String mID, String mName, String mDescription, String mImage, String mPrice, String mSale, boolean mIsSale, String mType) {
+    public Item(String mID, String mName, String mDescription, String mImage, String mPrice, String mSale, boolean mIsSale, int mType) {
         this.mID = mID;
         this.mName = mName;
         this.mDescription = mDescription;
@@ -77,11 +79,11 @@ public class Item {
         this.mSale = mSale;
     }
 
-    public String getmType() {
+    public int getmType() {
         return mType;
     }
 
-    public void setmType(String mType) {
+    public void setmType(int mType) {
         this.mType = mType;
     }
 }

@@ -8,22 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bachnn.myapplication.R;
-import com.bachnn.myapplication.model.Item;
 
-import java.util.List;
-
-public class HistoryFragment extends Fragment {
-    private RecyclerView recyclerView;
-    private List<Item> mItems;
+public class DialogThreeFragment extends Fragment {
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.history_fragment, container, false);
+        View view= inflater.inflate(R.layout.dialog_three,container,false);
         return view;
     }
 }

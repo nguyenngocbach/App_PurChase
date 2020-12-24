@@ -56,12 +56,12 @@ public class AllAdapter extends RecyclerView.Adapter<AllAdapter.ViewHolderAll> {
     }
 
     public class ViewHolderAll extends RecyclerView.ViewHolder {
-        TextView txtTitle;
-        ImageView imgOne;
-        ImageView imgTwo;
-        ImageView imgThree;
-        ImageView imgFour;
-        ImageView imgFive;
+        public TextView txtTitle;
+        public ImageView imgOne;
+        public ImageView imgTwo;
+        public ImageView imgThree;
+        public ImageView imgFour;
+        public ImageView imgFive;
         public ViewHolderAll(@NonNull View itemView) {
             super(itemView);
             txtTitle= itemView.findViewById(R.id.txt_title_one);
@@ -73,38 +73,42 @@ public class AllAdapter extends RecyclerView.Adapter<AllAdapter.ViewHolderAll> {
             txtTitle.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    //mIAllItemListener.onClickAllItem(mAllItems.get(getAdapterPosition()).getmImageOne1(),0);
                 }
             });
 
             imgOne.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    if (getItemViewType()/2==0) return;
+                    mIAllItemListener.onClickAllItem(mAllItems.get(getAdapterPosition()).getmImageOne1(),0);
                 }
             });
             imgTwo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    mIAllItemListener.onClickAllItem(mAllItems.get(getAdapterPosition()).getmImageTwo2(),1);
 
                 }
             });
             imgThree.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    mIAllItemListener.onClickAllItem(mAllItems.get(getAdapterPosition()).getmImageThree(),2);
 
                 }
             });
             imgFour.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    mIAllItemListener.onClickAllItem(mAllItems.get(getAdapterPosition()).getmImageFour(),3);
 
                 }
             });
             imgFive.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    mIAllItemListener.onClickAllItem(mAllItems.get(getAdapterPosition()).getmNameFive(),4);
                 }
             });
         }
@@ -113,11 +117,11 @@ public class AllAdapter extends RecyclerView.Adapter<AllAdapter.ViewHolderAll> {
         public void onBindView(AllItem allItem) {
             txtTitle.setText(allItem.getmTitle());
             Glide.with(mContext)
-                    .load(allItem.getmImageOne())
+                    .load(allItem.getmImageOne1())
                     .placeholder(R.drawable.yeu_em2)
                     .into(imgOne);
             Glide.with(mContext)
-                    .load(allItem.getmImageTwo())
+                    .load(allItem.getmImageTwo2())
                     .placeholder(R.drawable.yeu_em)
                     .into(imgTwo);
             Glide.with(mContext)

@@ -51,12 +51,18 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ClothesV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ClothesAdapter.ClothesViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ClothesAdapter.ClothesViewHolder holder, final int position) {
         holder.onBind(mItems.get(position));
         Glide.with(mContext)
                 .load(mItems.get(position).getmImage())
                 .placeholder(R.drawable.yeu_em)
                 .into(holder.imgItem);
+        holder.frameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mItemListener.setOnClickItem(mItems.get(position), holder);
+            }
+        });
     }
 
     @Override
@@ -66,21 +72,15 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ClothesV
 
     public class ClothesViewHolder extends RecyclerView.ViewHolder {
         FrameLayout frameLayout;
-        ImageView imgItem;
-        TextView isSaleItem;
-        TextView nameItem;
+        public ImageView imgItem;
+        public TextView isSaleItem;
+        public TextView nameItem;
         public ClothesViewHolder(@NonNull View itemView) {
             super(itemView);
             frameLayout= itemView.findViewById(R.id.fram);
             imgItem= itemView.findViewById(R.id.image_item);
             isSaleItem= itemView.findViewById(R.id.is_sale);
             nameItem= itemView.findViewById(R.id.name_item);
-            frameLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mItemListener.setOnClickItem(mItems.get(getAdapterPosition()));
-                }
-            });
 
         }
 
