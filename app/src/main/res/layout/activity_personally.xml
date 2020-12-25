@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonallyActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="9:5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ngoc_trinh_3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+        <LinearLayout
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sản Phẩm"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:layout_marginTop="15dp"
+                />
+            <TextView
+                android:id="@+id/name_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên Sản phẩm"
+                android:textSize="16dp"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="7dp"
+                />
+            <TextView
+                android:id="@+id/txt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mô tả"
+                android:textSize="16dp"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="7dp"
+                />
+            <TextView
+                android:id="@+id/item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giá"
+                android:textSize="16dp"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="7dp"
+                />
+            <TextView
+                android:id="@+id/edt_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="7dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thông Tin Khách Hàng"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:layout_marginTop="15dp"
+                />
+            <TextView
+                android:id="@+id/name_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhận Tên"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/address_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhận địa chỉ"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/sdt_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Nhận Số Điện Thoại"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/email_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhận Email"
+                android:padding="5dp"
+                android:inputType="textEmailAddress"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_weight="1"
+                    android:text="Thoát"
+                    android:textAllCaps="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

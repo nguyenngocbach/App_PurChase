@@ -7,13 +7,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-
-    public DatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public DatabaseHelper(@Nullable Context context) {
+        super(context, "LAPTOP_DB", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL(DatabaseManager.CREATE_TABLE_LAPTOP);
+        sqLiteDatabase.execSQL(DatabaseManager.CREATE_TABLE_CUSTOMER);
     }
 
     @Override

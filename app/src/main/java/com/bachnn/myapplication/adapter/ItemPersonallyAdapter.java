@@ -4,6 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,10 +20,12 @@ public class ItemPersonallyAdapter extends RecyclerView.Adapter<ItemPersonallyAd
 
     private Context mContext;
     private List<Item> mItems;
+    private PersonallyListener mPersonallyListener;
 
-    public ItemPersonallyAdapter(Context mContext, List<Item> mItems) {
+    public ItemPersonallyAdapter(Context mContext, List<Item> mItems, PersonallyListener mPersonallyListener) {
         this.mContext = mContext;
         this.mItems = mItems;
+        this.mPersonallyListener = mPersonallyListener;
     }
 
     @NonNull
@@ -32,7 +37,7 @@ public class ItemPersonallyAdapter extends RecyclerView.Adapter<ItemPersonallyAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.onBind(mItems.get(position));
     }
 
     @Override
@@ -41,8 +46,26 @@ public class ItemPersonallyAdapter extends RecyclerView.Adapter<ItemPersonallyAd
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView txtPersonally;
+        ImageView iconNext;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            txtPersonally = itemView.findViewById(R.id.txt_personally);
+            iconNext = itemView.findViewById(R.id.icon_next);
         }
+
+        public void onBind(final Item item) {
+            txtPersonally.setText(item.getmName());
+            iconNext.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mPersonallyListener.onClickPersonally(item);
+                }
+            });
+        }
+    }
+
+    public interface PersonallyListener{
+        void onClickPersonally(Item item);
     }
 }

@@ -30,7 +30,7 @@
             android:id="@+id/image_dell"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:src="@drawable/dell"
+            android:src="@drawable/lllllll"
             android:padding="25dp"
             />
         <ImageView

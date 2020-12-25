@@ -27,12 +27,5 @@
             android:layout_height="56dp"
             />
     </LinearLayout>
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/id_navigation"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:headerLayout="@layout/a_head"
-            />
 
 </androidx.drawerlayout.widget.DrawerLayout>
