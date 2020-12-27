@@ -1,12 +1,27 @@
 <resources>
     <string name="app_name">App purchase</string>
-    <string name="hello_nhe">Ngoc ideo chứ không phải chủ sở hữu của âm thanh hoặc hình ảnh trong video. Nếu bạn là chủ sở hữu và không muốn tôi sử dụng chúng, hãy gửi cho tôi một thông báo
-    ideo chứ không phải chủ sở hữu của âm thanh hoặc hình ảnh trong video. Nếu bạn là chủ sở hữu và không muốn tôi sử dụng chúng, hãy gửi cho tôi một thông báo
-    ideo chứ không phải chủ sở hữu của âm thanh hoặc hình ảnh trong video. Nếu bạn là chủ sở hữu và không muốn tôi sử dụng chúng, hãy gửi cho tôi một thông báo
-    ideo chứ không phải chủ sở hữu của âm thanh hoặc hình ảnh trong video. Nếu bạn là chủ sở hữu và không muốn tôi sử dụng chúng, hãy gửi cho tôi một thông báo
-    ideo chứ không phải chủ sở hữu của âm thanh hoặc hình ảnh trong video. Nếu bạn là chủ sở hữu và không muốn tôi sử dụng chúng, hãy gửi cho tôi một thông báo
-    ideo chứ không phải chủ sở hữu của âm thanh hoặc hình ảnh trong video. Nếu bạn là chủ sở hữu và không muốn tôi sử dụng chúng, hãy gửi cho tôi một thông báo
-    ideo chứ không phải chủ sở hữu của âm thanh hoặc hình ảnh trong video. Nếu bạn là chủ sở hữu và không muốn tôi sử dụng chúng, hãy gửi cho tôi một thông báo
+    <string name="hello_nhe">
+        Là một trong những thương hiệu nổi tiếng trên thị trường laptop, Dell luôn làm hài lòng người dùng khi liên tục cho ra mắt các dòng máy tính có độ bền cao cùng nhiều tính năng vượt trội. Cùng Điện máy XANH tìm hiểu các dòng laptop của Dell đáng mua trong năm 2020 nhé!
+        CPU: 8th Gen Intel® Core™ i5-8350U Processor (Quad Core, 6MB Cache, 1.7GHz,15W)
+
+RAM: 8GB DDR4 2133MHz
+
+Đĩa cứng: M.2 256GB SATA Class 20 Solid State Drive
+
+Màn hình: Anti-Glare Display 13.3 inch FHD Cảm ứng (1920 x 1080)
+
+Card đồ họa: Share Intel® HD Graphics 620
+
+Hỗ trợ sim 4G
 </string>
     <string name="link_facebook">https://www.facebook.com/duc.minhh99/</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

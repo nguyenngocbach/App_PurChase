@@ -105,7 +105,7 @@ public class MainFragment extends Fragment implements ItemListener, IAllItemList
     }
 
     private void initDataAllItem() {
-        mAllItems.add(new AllItem("Laptop Lenovo ->","http://iv1.lisimg.com/image/3773431/600full-ngoc-trinh.jpghttps://maytinhdongbodell.vn/img/p/laptop-lenovo-g480-966.jpg",
+        mAllItems.add(new AllItem("Laptop Lenovo ->","https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                 "Laptop Lenovo G480",
                 "https://maytinhdongbodell.vn/img/p/hp-pavilion-14-v022tu-965.jpg",
                 "HP Pavilion 14 v022TU",
@@ -166,13 +166,10 @@ public class MainFragment extends Fragment implements ItemListener, IAllItemList
 
         mItems.add(new Item("133","Laptop Asus Pro","Laptop Asus Pro P1440FA-FA0674T - Intel Core i3 màn Full HD, SIÊU BỀN đạt tiêu chuẩn quân sự Mỹ, có ổ DVD học tiếng Anh, bảo hành 2 năm chính hãng",
                 "https://laptop88.vn/media/product/pro_poster_5124.jpg","7990000","20%",false,0));
-
         mItems.add(new Item("133","Laptop Asus M413IA-EK338T","Laptop Asus M413IA-EK338T - AMD Ryzen 5",
                 "https://laptop88.vn/media/product/pro_poster_5443.jpg","14990000","20%",false,0));
-
         mItems.add(new Item("133","Laptop Asus X509FJ","Laptop Asus X509FJ EJ053T & EJ153T - Intel Core i5",
                 "https://laptop88.vn/media/product/pro_poster_4624.jpg","13290000","20%",false,0));
-
         mItems.add(new Item("133","Laptop Asus TUF A15","Laptop Asus TUF A15 FA506IH-AL018T - AMD Ryzen 5",
                 "https://laptop88.vn/media/product/pro_poster_5268.jpg","18990000","20%",false,0));
 

@@ -21,6 +21,7 @@ import android.transition.Transition;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bachnn.myapplication.adapter.ClothesAdapter;
 import com.bachnn.myapplication.adapter.FinalAdapter;
@@ -42,6 +43,7 @@ public class PreviewActitity extends AppCompatActivity implements ItemListener {
     private RecyclerView mRecyclerView;
     private FinalAdapter mAdapter;
     private List<Item> itemList;
+    private TextView txtDescription;
 
     private Dialog dialogPreview;
 
@@ -53,6 +55,8 @@ public class PreviewActitity extends AppCompatActivity implements ItemListener {
         item = (Item) intent.getSerializableExtra("ALLITEM");
         itemList = (List<Item>) intent.getSerializableExtra("fullItem");
         toolbar= findViewById(R.id.toolbar_nhe);
+        txtDescription = findViewById(R.id.txt_description);
+        txtDescription.setText(item.getmDescription());
         toolbar.setTitle(item.getmName());
         imageView= findViewById(R.id.img_nhe);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

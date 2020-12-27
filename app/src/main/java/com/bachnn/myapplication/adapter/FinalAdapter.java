@@ -85,7 +85,7 @@ public class FinalAdapter extends RecyclerView.Adapter<FinalAdapter.ViewHolderFi
             txtPrice.setText(item.getmPrice());
             if (getItemViewType()!=0){
                 txtSale.setVisibility(View.GONE);
-            }else nameItem.setText(item.getmSale());
+            }else nameItem.setText(item.getmName());
         }
     }
 }

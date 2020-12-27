@@ -137,7 +137,7 @@
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:paddingStart="15dp"
-                    android:text="Gái Xinh ->"
+                    android:text="Tất Cả Laptop"
                     android:textColor="@color/color_red"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -161,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:paddingStart="15dp"
-                    android:text="Gái Xinh ->"
+                    android:text="Các Loại Laptop"
                     android:textColor="@color/color_red"
                     android:textSize="16dp"
                     android:textStyle="bold" />
